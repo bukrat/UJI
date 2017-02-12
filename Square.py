@@ -29,9 +29,9 @@ def turn():
     robotAngle = 0
     while robotAngle < target:
         p3dx.move(1.0,-1.0)
-        turnAngle = turnAngle + p3dx.leftEncoder
         wheelAngle = p3dx.leftEncoder - initialEncoder
         robotAngle = 2 * wheelAngle * r / L
+    turnAngle = turnAngle + wheelAngle
     p3dx.stop()
 	
 print('Pose of the robot at the start')
